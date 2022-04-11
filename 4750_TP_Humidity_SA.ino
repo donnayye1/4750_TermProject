@@ -1,7 +1,7 @@
  #include "DHT.h"
- #define DHTPIN 2
+ #define DHTPIN 2              // I/O pin of Arduino
  #define DHTTYPE DHT11
- DHT dht(DHTPIN, DHTTYPE);
+ DHT dht(DHTPIN, DHTTYPE);     
  
 void setup() {
   Serial.begin(115200);
@@ -10,9 +10,9 @@ void setup() {
 }
 
 void loop() {
-  float h = dht.readHumidity();
-  float t = dht.readTemperature(true);
-  if(isnan(h) || isnan(t)){
+  float h = dht.readHumidity();                 // Storing data into float 'h'
+  float t = dht.readTemperature(true);         
+  if(isnan(h) || isnan(t)){                     // Used for undefined/non-representable values for floating-point elements
     Serial.println(F("Failed to read from DHT sensor"));
     return;
   }
