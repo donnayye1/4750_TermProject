@@ -1,9 +1,9 @@
- #include "DHT.h"
+ #include "DHT.h"      //bing bong
  #define DHTPIN 2
  #define DHTTYPE DHT11
  DHT dht(DHTPIN, DHTTYPE);
  
-void setup() {
+void setup() {   
   Serial.begin(115200);
   Serial.println(F("DHT11 TEST"));
   dht.begin();
@@ -22,6 +22,6 @@ void loop() {
   Serial.println(" ");
   Serial.print("Temperature: ");
   Serial.print(t);
-  Serial.print("°F");
+  Serial.print("°F");  
   delay(1000);
 }
